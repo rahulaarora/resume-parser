@@ -1,6 +1,13 @@
 import Head from "next/head";
+import { useState } from "react";
+import { useRouter } from 'next/router'
 
 function form() {
+
+    function submitHandler() {
+        
+    }
+
     return (
         <>
             <Head>
@@ -10,7 +17,13 @@ function form() {
             </Head>
 
             <main className="container py-5">
-                <input type="button" value="button" />
+                <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data">
+                    <h6>Upload Resume Form</h6>
+                    
+                    <button type="submit" className="btn btn-outline-success">
+                        Upload
+                    </button>
+                </form>
             </main>
         </>
     );

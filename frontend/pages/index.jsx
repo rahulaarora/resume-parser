@@ -3,9 +3,12 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import $ from 'jquery';
+import { useRouter } from 'next/router'
+
 
 export default function Home() {
-
+  const router = useRouter();
   const [file, setFile] = useState(null);
   // const [createObjectURL, setCreateObjectURL] = useState(null);
 
@@ -17,7 +20,7 @@ export default function Home() {
     }
   }
 
-  async function submitFileUploadHandler (e) {
+  async function submitHandler(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
@@ -26,7 +29,10 @@ export default function Home() {
       body: formData,
     });
     const res = await response.json();
+    res.success == true ? alert("File Uploaded Successfully") : alert("File Upload Failed");
+    router.reload();
   }
+
 
   return (
     <>
@@ -39,9 +45,10 @@ export default function Home() {
       <main>
         <div className="container-fluid py-5">
           <div>
-            <form className="col-5 mx-auto" onSubmit={submitFileUploadHandler} method={"POST"} encType="multipart/form-data">
+            <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data">
               <h6>Upload Resumes</h6>
               <input
+                id="file"
                 type="file"
                 name="resume"
                 multiple

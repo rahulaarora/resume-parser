@@ -19,7 +19,7 @@ export default function handler(req, res) {
     const form = new formidable.IncomingForm();
     form.parse(req, async (err, fields, files) => {
       if (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: err.message , success: false });
       }
       await saveFile(files.file);
       res.status(201).json({ success: true });
