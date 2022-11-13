@@ -6,11 +6,26 @@ import { useState } from "react";
 
 export default function Home() {
 
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(null);
+  // const [createObjectURL, setCreateObjectURL] = useState(null);
 
   function fileHandler(e) {
-    console.log(e.target.files);
-    setFile(e.target.files[0]);
+    if (e.target.files && e.target.files[0]) {
+      const i = e.target.files[0];
+      setFile(i);
+      // setCreateObjectURL(URL.createObjectURL(i));
+    }
+  }
+
+  async function submitFileUploadHandler (e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch("/api/fileUpload", {
+      method: "POST",
+      body: formData,
+    });
+    const res = await response.json();
   }
 
   return (
@@ -24,7 +39,7 @@ export default function Home() {
       <main>
         <div className="container-fluid py-5">
           <div>
-            <form className="col-5 mx-auto">
+            <form className="col-5 mx-auto" onSubmit={submitFileUploadHandler} method={"POST"} encType="multipart/form-data">
               <h6>Upload Resumes</h6>
               <input
                 type="file"
@@ -34,7 +49,7 @@ export default function Home() {
                 className="d-block py-3"
                 onChange={fileHandler}
               ></input>
-              <button type="button" className="btn btn-outline-success">
+              <button type="submit" className="btn btn-outline-success">
                 Upload
               </button>
             </form>
