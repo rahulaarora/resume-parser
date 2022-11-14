@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from 'next/router'
 
-function form() {
+function resumeForm() {
 
     function submitHandler() {
         
@@ -29,4 +29,4 @@ function form() {
     );
 }
 
-export default form;
+export default resumeForm;
