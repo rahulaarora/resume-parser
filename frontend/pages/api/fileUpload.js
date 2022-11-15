@@ -26,6 +26,6 @@ export default function handler(req, res) {
     });
   } 
   else {
-    res.status(500).json({ error: "Only POST requests allowed" });
+    res.status(405).json({ error: "Only POST requests allowed" });
   }
 }
