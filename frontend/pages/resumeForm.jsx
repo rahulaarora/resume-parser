@@ -28,6 +28,7 @@ function resumeForm() {
     }
 
     async function submitHandler(e) {
+        alert("Submitting!");
         e.preventDefault();
         const response = await fetch("/api/formUpload", {
             method: "POST",
@@ -52,7 +53,7 @@ function resumeForm() {
             </Head>
 
             <main className="container-fluid py-5">
-                <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data">
+                <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data" >
                     <h6>Enter Details:</h6>
                     {/* <input type={"text"} required name="userName" value={user.userName} onChange={changeHandler} /> */}
 
