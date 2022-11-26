@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 import $ from 'jquery';
 import { useRouter } from 'next/router'
+import Loader from "../components/Loader";
 
-
-export default function Home() {
+export default function Home(props) {
   const router = useRouter();
   const [file, setFile] = useState(null);
   // const [createObjectURL, setCreateObjectURL] = useState(null);
@@ -21,6 +21,7 @@ export default function Home() {
   }
 
   async function submitHandler(e) {
+    props.setIsLoading(true);
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
@@ -29,6 +30,7 @@ export default function Home() {
       body: formData,
     });
     const res = await response.json();
+    props.setIsLoading(false);
     res.success == true ? alert(res.message) : alert(res.error);
     router.reload();
   }
@@ -43,6 +45,7 @@ export default function Home() {
       </Head>
 
       <main>
+        {props.isLoading && <Loader />}
         <div className="container-fluid py-5">
           <div>
             <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data">

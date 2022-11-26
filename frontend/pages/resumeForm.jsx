@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from 'next/router'
+import Loader from "../components/Loader";
+
 
 let userObj = {
     userName: "",
@@ -12,10 +14,10 @@ let userObj = {
     collegeName: "",
     designation: "",
     experience: "",
-    linkedIn:""
+    linkedIn: ""
 }
 
-function resumeForm() {
+function resumeForm(props) {
 
     const [user, setUser] = useState(userObj);
     const router = useRouter();
@@ -28,7 +30,7 @@ function resumeForm() {
     }
 
     async function submitHandler(e) {
-        alert("Submitting!");
+        props.setIsLoading(true);
         e.preventDefault();
         const response = await fetch("/api/formUpload", {
             method: "POST",
@@ -39,7 +41,8 @@ function resumeForm() {
         });
 
         const res = await response.json();
-        res.success == true ? alert("Form submitted successfully!") : alert("Failed, Try again!");
+        props.setIsLoading(false);
+        res.success == true ? alert(res.message) : alert(res.error);
         router.reload();
 
     }
@@ -54,48 +57,49 @@ function resumeForm() {
 
             <main className="container-fluid py-5">
                 <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data" >
+                    {props.isLoading && <Loader />}
                     <h6>Enter Details:</h6>
                     {/* <input type={"text"} required name="userName" value={user.userName} onChange={changeHandler} /> */}
 
                     <div className="d-flex flex-column">
                         <input required type="text" name="userName"
-                            id="name" placeholder="Enter Your Full name*" className="my-2" value={user.userName} onChange={changeHandler}/>
+                            id="name" placeholder="Enter Your Full name*" className="my-2" value={user.userName} onChange={changeHandler} />
 
 
                         <input required type="email" name="email"
-                            id="name" placeholder="Enter Your Valid Email*" className="my-2" value={user.email} onChange={changeHandler}/>
+                            id="name" placeholder="Enter Your Valid Email*" className="my-2" value={user.email} onChange={changeHandler} />
 
 
                         <input type="tel" name="mobileNumber"
-                            id="name" placeholder="Enter Your Mobile Number" className="my-2" value={user.mobileNumber} onChange={changeHandler}/>
+                            id="name" placeholder="Enter Your Mobile Number" className="my-2" value={user.mobileNumber} onChange={changeHandler} />
 
 
                         <input type="text" name="education"
-                            id="name" placeholder="Enter your Highest Education" className="my-2" value={user.education} onChange={changeHandler}/>
+                            id="name" placeholder="Enter your Highest Education" className="my-2" value={user.education} onChange={changeHandler} />
 
 
                         <input required type="text" name="skills"
-                            id="name" placeholder="Enter your skills separated with comma*" className="my-2" value={user.skills} onChange={changeHandler}/>
+                            id="name" placeholder="Enter your skills separated with comma*" className="my-2" value={user.skills} onChange={changeHandler} />
 
 
                         <input type="text" name="companyName"
-                            id="name" placeholder="Enter your current Company Name" className="my-2" value={user.companyName} onChange={changeHandler}/>
+                            id="name" placeholder="Enter your current Company Name" className="my-2" value={user.companyName} onChange={changeHandler} />
 
 
                         <input type="text" name="collegeName"
-                            id="name" placeholder="Enter your College Name" className="my-2" value={user.collegeName} onChange={changeHandler}/>
+                            id="name" placeholder="Enter your College Name" className="my-2" value={user.collegeName} onChange={changeHandler} />
 
 
                         <input type="text" name="designation"
-                            id="name" placeholder="Enter your Designation" className="my-2" value={user.designation} onChange={changeHandler}/>
+                            id="name" placeholder="Enter your Designation" className="my-2" value={user.designation} onChange={changeHandler} />
 
 
                         <input type="number" name="experience"
-                            id="text" placeholder="Enter your Experience" className="my-2" value={user.experience} onChange={changeHandler}/>
+                            id="text" placeholder="Enter your Experience" className="my-2" value={user.experience} onChange={changeHandler} />
 
 
                         <input type="url" name="linkedIn"
-                            id="name" placeholder="Enter the Valid URL" className="my-2" value={user.linkedIn} onChange={changeHandler}/>
+                            id="name" placeholder="Enter the Valid URL" className="my-2" value={user.linkedIn} onChange={changeHandler} />
 
 
                     </div>
