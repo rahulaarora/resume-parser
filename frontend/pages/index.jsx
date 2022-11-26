@@ -29,7 +29,7 @@ export default function Home() {
       body: formData,
     });
     const res = await response.json();
-    res.success == true ? alert("File Uploaded Successfully") : alert("File Upload Failed");
+    res.success == true ? alert(res.message) : alert(res.error);
     router.reload();
   }
 
