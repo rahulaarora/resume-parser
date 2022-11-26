@@ -14,7 +14,8 @@ let userObj = {
     collegeName: "",
     designation: "",
     experience: "",
-    linkedIn: ""
+    linkedIn: "",
+    fileName: "form"
 }
 
 function resumeForm(props) {
