@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'parser_app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -126,8 +127,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # for uploading resume files
-MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'mediafiles')
-MEDIA_URL = '/mediafiles/'
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'uploads')
+MEDIA_URL = '/uploads/'
 
 # User session expire on browser close
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
