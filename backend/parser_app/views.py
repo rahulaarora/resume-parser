@@ -34,6 +34,15 @@ class ResumeViewSet(viewsets.ModelViewSet):
          ret = super(ResumeViewSet, self).create(request)
          fileName = request.data['fileName']
          resumeData = []
+         userName = "" 
+         email= "" 
+         mobileNumber=""
+         education=""
+         skills=""
+         companyName=""
+         collegeName=""
+         designation=""
+         experience=""
 
          # extracting resume entities
          parser = ResumeParser(os.path.join(settings.MEDIA_ROOT, fileName))

@@ -31,10 +31,13 @@ export default function Home(props) {
     });
     const res = await response.json();
     props.setIsLoading(false);
-    res.success == true ? alert(res.message) : alert(res.error);
+
+    props.setData(res.userData);
+    router.push("/resumeForm");
+    // res.success == true ? alert(res.message) : alert(res.error);
     // router.reload();
-    e.target.reset();
-    
+    // e.target.reset();
+
   }
 
 

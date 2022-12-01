@@ -7,8 +7,8 @@ export const config = {
   },
 };
 
+//using django api to extract data from file
 async function extractData(fileName) {
-  //using django api to extract data from file
   let headersList = {
     Accept: "*/*",
     "Content-Type": "application/json",
@@ -28,18 +28,19 @@ async function extractData(fileName) {
   return data;
 }
 
-async function saveData(user) {
-  const response = await fetch("http://localhost:3000/api/formUpload", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-          "Content-Type": "application/json",
-      },
-  });
+//upload data to mongoDB
+// async function saveData(user) {
+//   const response = await fetch("http://localhost:3000/api/formUpload", {
+//       method: "POST",
+//       body: JSON.stringify(user),
+//       headers: {
+//           "Content-Type": "application/json",
+//       },
+//   });
 
-  const res = await response.json();
-  return res;  
-}
+//   const res = await response.json();
+//   return res;  
+// }
 
 export default function handler(req, res) {
   if (req.method === "POST") {
@@ -77,8 +78,9 @@ export default function handler(req, res) {
           fileName: fileName,
         };
 
-        let savedDataRes = await saveData(userObj);
-        res.status(201).json({ success: true, message: "File uploaded successfully!" });
+        // let savedDataRes = await saveData(userObj);
+        // res.status(201).json({ success: true, message: "File uploaded successfully!" });
+        res.status(201).json({"userData" : userObj});
       } else {
         res.status(400).json({ success: false, error: "Invalid file type!" });
       }
