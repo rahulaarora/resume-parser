@@ -9,7 +9,7 @@ import Loader from "../components/Loader";
 
 export default function Home(props) {
   const router = useRouter();
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState();
   // const [createObjectURL, setCreateObjectURL] = useState(null);
 
   function fileHandler(e) {
@@ -32,7 +32,9 @@ export default function Home(props) {
     const res = await response.json();
     props.setIsLoading(false);
     res.success == true ? alert(res.message) : alert(res.error);
-    router.reload();
+    // router.reload();
+    e.target.reset();
+    
   }
 
 
@@ -48,7 +50,7 @@ export default function Home(props) {
         {props.isLoading && <Loader />}
         <div className="container-fluid py-5">
           <div>
-            <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data">
+            <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data" id="resumeForm">
               <h6>Upload Resumes</h6>
               <input
                 id="file"

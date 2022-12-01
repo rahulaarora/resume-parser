@@ -1,7 +1,7 @@
 function Loader() {
     return (
         <>
-            <div class="alert alert-info" role="alert">
+            <div className="alert alert-info" role="alert">
                 Uploading! Please wait... 
             </div>
         </>

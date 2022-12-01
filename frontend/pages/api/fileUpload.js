@@ -78,9 +78,9 @@ export default function handler(req, res) {
         };
 
         let savedDataRes = await saveData(userObj);
-        res.status(201).json({ success: true, message: "File uploaded" });
+        res.status(201).json({ success: true, message: "File uploaded successfully!" });
       } else {
-        res.status(400).json({ success: false, error: "Invalid file type" });
+        res.status(400).json({ success: false, error: "Invalid file type!" });
       }
     });
   } else {

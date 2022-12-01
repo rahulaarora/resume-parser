@@ -44,7 +44,8 @@ function resumeForm(props) {
         const res = await response.json();
         props.setIsLoading(false);
         res.success == true ? alert(res.message) : alert(res.error);
-        router.reload();
+        e.target.reset();
+
 
     }
 
