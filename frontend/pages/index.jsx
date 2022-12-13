@@ -64,6 +64,7 @@ export default function Home(props) {
                 className="d-block py-3"
                 onChange={fileHandler}
               ></input>
+
               <button type="submit" className="btn btn-outline-success">
                 Upload
               </button>

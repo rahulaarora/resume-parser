@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
     experience: "",
     linkedIn: "",
     fileName: "form",
+    role: "",
   };
 
   const [isLoading, setIsLoading] = useState(false);

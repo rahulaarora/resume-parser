@@ -76,6 +76,7 @@ export default function handler(req, res) {
           experience: extractedData["data"][8],
           linkedIn: "",
           fileName: fileName,
+          role: "",
         };
 
         // let savedDataRes = await saveData(userObj);

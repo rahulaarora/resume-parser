@@ -5,6 +5,20 @@ import Loader from "../components/Loader";
 
 
 function resumeForm(props) {
+    let tempObj = {
+        userName: "",
+        email: "",
+        mobileNumber: "",
+        education: "",
+        skills: "",
+        companyName: "",
+        collegeName: "",
+        designation: "",
+        experience: "",
+        linkedIn: "",
+        fileName: "form",
+        role: "",
+      };
 
     const [user, setUser] = useState(props.data);
     const router = useRouter();
@@ -29,6 +43,8 @@ function resumeForm(props) {
         const res = await response.json();
         props.setIsLoading(false);
         res.success == true ? alert(res.message) : alert(res.error);
+        //to clear the form
+        props.setData(tempObj);
         router.push("/");
     }
 
@@ -44,16 +60,23 @@ function resumeForm(props) {
                 <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data">
                     {props.isLoading && <Loader />}
                     <h6>Enter Details:</h6>
-                    {/* <input type={"text"} required name="userName" value={user.userName} onChange={changeHandler} /> */}
 
                     <div className="d-flex flex-column">
-                        <label htmlFor="userName">Full Name:</label>
-                        <input required type="text" name="userName"
-                            id="name" placeholder="Enter Your Full name*" className="my-2" value={user.userName === null ? " " : user.userName} onChange={changeHandler} />
 
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="role">Enter the job role you are aspiring for* :</label>
+                        <select required name="role" id="role" className="my-2" value={user.role === null ? " " : user.role} onChange={changeHandler}>
+                            <option value="" disabled selected>Select from the options!</option>
+                            <option value="mern developer">MERN Stack Developer</option>
+                            <option value="java developer">JAVA Developer</option>
+                        </select>
+
+                        <label htmlFor="userName">Full Name* :</label>
+                        <input required type="text" name="userName"
+                            id="name" placeholder="Enter Your Full name" className="my-2" value={user.userName === null ? " " : user.userName} onChange={changeHandler} />
+
+                        <label htmlFor="email">Email* :</label>
                         <input required type="email" name="email"
-                            id="name" placeholder="Enter Your Valid Email*" className="my-2" value={user.email === null ? " " : user.email} onChange={changeHandler} />
+                            id="name" placeholder="Enter Your Valid Email" className="my-2" value={user.email === null ? " " : user.email} onChange={changeHandler} />
 
 
                         <label htmlFor="email">Mobile Number:</label>
@@ -66,9 +89,9 @@ function resumeForm(props) {
                             id="name" placeholder="Enter your Highest Education" className="my-2" value={user.education === null ? " " : user.education} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">Skills:</label>
+                        <label htmlFor="email">Skills* :</label>
                         <input required type="text" name="skills"
-                            id="name" placeholder="Enter your skills separated with comma*" className="my-2" value={user.skills === null ? " " : user.skills} onChange={changeHandler} />
+                            id="name" placeholder="Enter your skills separated with comma" className="my-2" value={user.skills === null ? " " : user.skills} onChange={changeHandler} />
 
 
                         <label htmlFor="email">Company Name:</label>
