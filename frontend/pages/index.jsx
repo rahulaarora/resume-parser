@@ -3,8 +3,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useState } from "react";
-import $ from 'jquery';
-import { useRouter } from 'next/router'
+import $ from "jquery";
+import { useRouter } from "next/router";
 import Loader from "../components/Loader";
 
 export default function Home(props) {
@@ -37,9 +37,7 @@ export default function Home(props) {
     // res.success == true ? alert(res.message) : alert(res.error);
     // router.reload();
     // e.target.reset();
-
   }
-
 
   return (
     <>
@@ -53,7 +51,13 @@ export default function Home(props) {
         {props.isLoading && <Loader />}
         <div className="container-fluid py-5">
           <div>
-            <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data" id="resumeForm">
+            <form
+              className="col-5 mx-auto"
+              onSubmit={submitHandler}
+              method="POST"
+              encType="multipart/form-data"
+              id="resumeForm"
+            >
               <h6>Upload Resumes</h6>
               <input
                 id="file"
@@ -63,7 +67,7 @@ export default function Home(props) {
                 required
                 className="d-block py-3"
                 onChange={fileHandler}
-              ></input>
+              />
 
               <button type="submit" className="btn btn-outline-success">
                 Upload
@@ -74,7 +78,7 @@ export default function Home(props) {
             ------------------------------OR----------------------------
           </div>
           <div className="text-center">
-            <Link href={"/resumeForm"}>
+            <Link href="/resumeForm">
               <button type="button" className="btn btn-outline-primary">
                 Enter Details Manually
               </button>
