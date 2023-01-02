@@ -45,7 +45,7 @@ class ResumeViewSet(viewsets.ModelViewSet):
          experience=""
 
          # extracting resume entities
-         parser = ResumeParser(os.path.join(settings.MEDIA_ROOT, fileName))
+         parser = ResumeParser(os.path.join(settings.MEDIA_ROOT, fileName), skills_file=os.path.join(settings.BASE_DIR, 'resume_parser', 'skills.csv'))
          data = parser.get_extracted_data()
          userName= data.get('name')
          email= data.get('email')
