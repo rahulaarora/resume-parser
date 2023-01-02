@@ -1,1 +1,3 @@
-uploads/
+/uploads/*.docx
+/uploads/*.doc
+/uploads/*.pdf
