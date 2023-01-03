@@ -1,12 +1,11 @@
-from django.shortcuts import render, redirect
-from pyresparser import ResumeParser
-from django.contrib import messages
-from django.conf import settings
-from django.db import IntegrityError
-from django.http import HttpResponse, FileResponse, Http404
+# from django.shortcuts import render, redirect
+# from django.contrib import messages
+# from django.db import IntegrityError
+# from django.http import HttpResponse, FileResponse, Http404
+# from django.shortcuts import render
 import os
-
-from django.shortcuts import render
+from pyresparser import ResumeParser
+from django.conf import settings
 
 from rest_framework import viewsets
 
@@ -45,7 +44,7 @@ class ResumeViewSet(viewsets.ModelViewSet):
          experience=""
 
          # extracting resume entities
-         parser = ResumeParser(os.path.join(settings.MEDIA_ROOT, fileName), skills_file=os.path.join(settings.BASE_DIR, 'resume_parser', 'skills.csv'))
+         parser = ResumeParser(resume=os.path.join(settings.MEDIA_ROOT, fileName), skills_file=os.path.join(settings.BASE_DIR, 'resume_parser', 'skills.csv'), custom_regex=r'''([0-9]{10})''')
          data = parser.get_extracted_data()
          userName= data.get('name')
          email= data.get('email')
