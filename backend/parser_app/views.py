@@ -36,7 +36,7 @@ class ResumeViewSet(viewsets.ModelViewSet):
          userName = "" 
          email= "" 
          mobileNumber=""
-         education=""
+         degree=""
          skills=""
          companyName=""
          collegeName=""
@@ -46,13 +46,15 @@ class ResumeViewSet(viewsets.ModelViewSet):
          # extracting resume entities
          parser = ResumeParser(resume=os.path.join(settings.MEDIA_ROOT, fileName), skills_file=os.path.join(settings.BASE_DIR, 'resume_parser', 'skills.csv'), custom_regex=r'''([0-9]{10})''')
          data = parser.get_extracted_data()
+         print(data)
          userName= data.get('name')
          email= data.get('email')
          mobileNumber= data.get('mobile_number')
          if data.get('degree') is not None:
-            education= ', '.join(data.get('degree'))
+            # degree= ', '.join(data.get('degree'))
+            degree= data.get('degree')
          else:
-            education= None
+            degree= None
          companyName= data.get('company_names')
          collegeName= data.get('college_name')
          designation= data.get('designation')
@@ -66,6 +68,6 @@ class ResumeViewSet(viewsets.ModelViewSet):
          else:
             experience= None
 
-         resumeData+=(userName, email, mobileNumber, education, skills, companyName, collegeName, designation, experience)
+         resumeData+=(userName, email, mobileNumber, degree, skills, companyName, collegeName, designation, experience)
 
          return Response({'data':resumeData, "success": True}, status=status.HTTP_201_CREATED)

@@ -68,7 +68,7 @@ export default function handler(req, res) {
           userName: extractedData["data"][0],
           email: extractedData["data"][1],
           mobileNumber: extractedData["data"][2],
-          education: extractedData["data"][3],
+          degree: extractedData["data"][3],
           skills: extractedData["data"][4],
           companyName: extractedData["data"][5],
           collegeName: extractedData["data"][6],

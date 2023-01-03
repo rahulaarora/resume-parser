@@ -9,7 +9,7 @@ function resumeForm(props) {
         userName: "",
         email: "",
         mobileNumber: "",
-        education: "",
+        degree: "",
         skills: "",
         companyName: "",
         collegeName: "",
@@ -72,51 +72,51 @@ function resumeForm(props) {
 
                         <label htmlFor="userName">Full Name* :</label>
                         <input required type="text" name="userName"
-                            id="name" placeholder="Enter Your Full name" className="my-2" value={user.userName === null ? " " : user.userName} onChange={changeHandler} />
+                            id="userName" placeholder="Enter Your Full name" className="my-2" value={user.userName === null ? " " : user.userName} onChange={changeHandler} />
 
                         <label htmlFor="email">Email* :</label>
                         <input required type="email" name="email"
-                            id="name" placeholder="Enter Your Valid Email" className="my-2" value={user.email === null ? " " : user.email} onChange={changeHandler} />
+                            id="email" placeholder="Enter Your Valid Email" className="my-2" value={user.email === null ? " " : user.email} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">Mobile Number:</label>
+                        <label htmlFor="mobileNumber">Mobile Number:</label>
                         <input type="tel" name="mobileNumber"
-                            id="name" placeholder="Enter Your Mobile Number" className="my-2" value={user.mobileNumber === null ? " " : user.mobileNumber} onChange={changeHandler} />
+                            id="mobileNumber" placeholder="Enter Your Mobile Number" className="my-2" value={user.mobileNumber === null ? " " : user.mobileNumber} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">Education:</label>
-                        <input type="text" name="education"
-                            id="name" placeholder="Enter your Highest Education" className="my-2" value={user.education === null ? " " : user.education} onChange={changeHandler} />
+                        <label htmlFor="degree">Degree:</label>
+                        <input type="text" name="degree"
+                            id="degree" placeholder="Enter your Highest degree" className="my-2" value={user.degree === null ? " " : user.degree} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">Skills* :</label>
+                        <label htmlFor="skills">Skills* :</label>
                         <input required type="text" name="skills"
-                            id="name" placeholder="Enter your skills separated with comma" className="my-2" value={user.skills === null ? " " : user.skills} onChange={changeHandler} />
+                            id="skills" placeholder="Enter your skills separated with comma" className="my-2" value={user.skills === null ? " " : user.skills} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">Company Name:</label>
+                        <label htmlFor="companyName">Company Name:</label>
                         <input type="text" name="companyName"
-                            id="name" placeholder="Enter your current Company Name" className="my-2" value={user.companyName === null ? " " : user.companyName} onChange={changeHandler} />
+                            id="companyName" placeholder="Enter your current Company Name" className="my-2" value={user.companyName === null ? " " : user.companyName} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">College Name:</label>
+                        <label htmlFor="collegeName">College Name:</label>
                         <input type="text" name="collegeName"
-                            id="name" placeholder="Enter your College Name" className="my-2" value={user.collegeName === null ? " " : user.collegeName} onChange={changeHandler} />
+                            id="collegeName" placeholder="Enter your College Name" className="my-2" value={user.collegeName === null ? " " : user.collegeName} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">Designation:</label>
+                        <label htmlFor="designation">Designation:</label>
                         <input type="text" name="designation"
-                            id="name" placeholder="Enter your Designation" className="my-2" value={user.designation === null ? " " : user.designation} onChange={changeHandler} />
+                            id="designation" placeholder="Enter your Designation" className="my-2" value={user.designation === null ? " " : user.designation} onChange={changeHandler} /> 
 
 
-                        <label htmlFor="email">Experience:</label>
-                        <input type="number" name="experience"
-                            id="text" placeholder="Enter your Experience" className="my-2" value={user.experience === null ? " " : user.experience} onChange={changeHandler} />
+                        <label htmlFor="experience">Experience:</label>
+                        <input type="text" name="experience"
+                            id="experience" placeholder="Enter your Experience" className="my-2" value={user.experience === null ? " " : user.experience} onChange={changeHandler} />
 
 
-                        <label htmlFor="email">LinkedIn URL:</label>
+                        <label htmlFor="linkedIn">LinkedIn URL:</label>
                         <input type="url" name="linkedIn"
-                            id="name" placeholder="Enter the Valid URL" className="my-2" value={user.linkedIn === null ? " " : user.linkedIn} onChange={changeHandler} />
+                            id="linkedIn" placeholder="Enter the Valid URL" className="my-2" value={user.linkedIn === null ? " " : user.linkedIn} onChange={changeHandler} />
 
 
                     </div>
