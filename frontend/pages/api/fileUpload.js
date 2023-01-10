@@ -18,7 +18,7 @@ async function extractData(fileName) {
     fileName: fileName,
   });
 
-  let response = await fetch("http://127.0.0.1:8000/api/resume/", {
+  let response = await fetch(`${process.env.DJANGO_URL}/resume/`, {
     method: "POST",
     body: bodyContent,
     headers: headersList,
