@@ -4,7 +4,8 @@
 # from django.http import HttpResponse, FileResponse, Http404
 # from django.shortcuts import render
 import os
-from pyresparser import ResumeParser
+# from pyresparser import ResumeParser
+from .pyresparser import ResumeParser
 from django.conf import settings
 
 from rest_framework import viewsets
@@ -46,7 +47,7 @@ class ResumeViewSet(viewsets.ModelViewSet):
          # extracting resume entities
          parser = ResumeParser(resume=os.path.join(settings.MEDIA_ROOT, fileName), skills_file=os.path.join(settings.BASE_DIR, 'resume_parser', 'skills.csv'), custom_regex=r'''([0-9]{10})''')
          data = parser.get_extracted_data()
-         print(data)
+         # print(data)
          userName= data.get('name')
          email= data.get('email')
          mobileNumber= data.get('mobile_number')
