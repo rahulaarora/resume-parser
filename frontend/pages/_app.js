@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
+import Loader from "../components/Loader";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
@@ -23,6 +24,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+     {isLoading && <Loader />}
+     {/* {<Loader />} */}
       <Navbar />
       <Component
         {...pageProps}

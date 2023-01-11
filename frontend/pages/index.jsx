@@ -50,7 +50,6 @@ export default function Home(props) {
       </Head>
 
       <main>
-        {props.isLoading && <Loader />}
         <div className="container-fluid py-5">
           <div>
             <form className="col-5 mx-auto" onSubmit={submitHandler} method={"POST"} encType="multipart/form-data" id="resumeForm">
