@@ -4,7 +4,7 @@ import Loader from "../components/Loader";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  let userObj = {
+  const userObj = {
     userName: "",
     email: "",
     mobileNumber: "",
@@ -24,15 +24,15 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-     {isLoading && <Loader />}
-     {/* {<Loader />} */}
+      {isLoading && <Loader />}
+      {/* {<Loader />} */}
       <Navbar />
       <Component
         {...pageProps}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
-        data = {data}
-        setData = {setData}
+        data={data}
+        setData={setData}
       />
     </>
   );
