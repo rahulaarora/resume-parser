@@ -1,6 +1,6 @@
 Django
-# django-crispy-forms
-# pyresparser
+django-crispy-forms
+pyresparser
 gunicorn
 spacy==2.3.5
 djangorestframework

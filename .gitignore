@@ -1,3 +1,5 @@
 /uploads/*.docx
 /uploads/*.doc
 /uploads/*.pdf
+
+.vscode

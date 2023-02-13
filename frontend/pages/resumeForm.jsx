@@ -18,7 +18,7 @@ function resumeForm(props) {
         linkedIn: "",
         fileName: "form",
         role: "",
-      };
+    };
 
     const [user, setUser] = useState(props.data);
     const router = useRouter();
@@ -45,7 +45,7 @@ function resumeForm(props) {
         res.success == true ? alert(res.message) : alert(res.error);
         //to clear the form
         props.setData(tempObj);
-        router.push("/");
+        router.push("/dashboard");
     }
 
     return (
@@ -105,7 +105,7 @@ function resumeForm(props) {
 
                         <label htmlFor="designation">Designation:</label>
                         <input type="text" name="designation"
-                            id="designation" placeholder="Enter your Designation" className="my-2" value={user.designation === null ? " " : user.designation} onChange={changeHandler} /> 
+                            id="designation" placeholder="Enter your Designation" className="my-2" value={user.designation === null ? " " : user.designation} onChange={changeHandler} />
 
 
                         <label htmlFor="experience">Experience:</label>
