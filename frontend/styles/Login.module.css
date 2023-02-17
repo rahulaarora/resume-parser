@@ -1,0 +1,213 @@
+.root {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  align-items: flex-start;
+  background-color: #f9f9f9cc;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+.sec {
+  position: absolute;
+  left: calc(50% - -0.5px);
+  top: calc(50% - -0.5px);
+  width: min-content;
+  height: min-content;
+  flex-direction: column;
+  place-content: center;
+  align-items: center;
+  gap: 24px;
+  transform: translate(-50%, -50%);
+}
+.login {
+  color: #111;
+  font-size: 24px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.sec2 {
+  width: 320px;
+  height: min-content;
+  flex-direction: column;
+  place-content: center;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.sec3 {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  place-content: center;
+  gap: 8px;
+}
+.email {
+  color: #111;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.sec4 {
+  height: min-content;
+  align-self: stretch;
+  padding: 8px;
+  outline: solid 1px #eee;
+  outline-offset: -1px;
+  border-radius: 4px;
+  background-color: #f9f9f9cc;
+}
+.princeEmailCom {
+  color: #111;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  z-index: 0;
+  height: min-content;
+  flex: 1;
+  flex-direction: column;
+}
+.sec5 {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  place-content: center;
+  gap: 8px;
+}
+.sec6 {
+  height: min-content;
+  align-self: stretch;
+  place-content: space-between;
+  align-items: center;
+}
+.password {
+  color: #111;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.forgotPassword {
+  color: #007aff;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.sec7 {
+  height: min-content;
+  align-self: stretch;
+  padding: 8px;
+  outline: solid 1px #eee;
+  outline-offset: -1px;
+  border-radius: 4px;
+  background-color: #f9f9f9cc;
+}
+.unnamed {
+  color: #111;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  z-index: 0;
+  height: min-content;
+  flex: 1;
+  flex-direction: column;
+}
+.sec8 {
+  height: min-content;
+  align-self: stretch;
+  place-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #007aff;
+}
+.login2 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+.donTHaveAccountCreateNewAccoun {
+  height: min-content;
+  align-self: stretch;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.labelWrapper {
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  flex-shrink: 1;
+}
+.label {
+  color: #111;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+.label2 {
+  color: #007aff;
+  font-size: 14px;
+  font-family: Helvetica, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+:where(.clapyResets),
+:where(.clapyResets) * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:where(.clapyResets),
+:where(.clapyResets) :not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+:where(.clapyResets) ul,
+:where(.clapyResets) ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+:where(.clapyResets) p:empty::before {
+  content: "";
+  display: inline-block;
+}
+
+:where(.clapyResets) img {
+  object-fit: contain;
+}
+
+:where(.clapyResets) svg {
+  overflow: visible;
+}

@@ -1,6 +1,6 @@
 import skillsData from "../data/skillsData";
 
-const SkillsMatched = (props) => {
+const Dashboard = (props) => {
     let matchedSkills = 0
     let totalSkills = 0
     for (const role in skillsData) {
@@ -18,14 +18,13 @@ const SkillsMatched = (props) => {
 
     return (
         <>
-            <h1 className="p-2">Dashboard</h1>
             <div className="p-2">
                 <p>Skills Matched: {matchedSkills}</p>
                 <p>Total Skills: {totalSkills}</p>
-                <p>% Match: {(matchedSkills / totalSkills) * 100}</p>
+                <p>% Match: {(matchedSkills / totalSkills) * 100}%</p>
             </div>
         </>
     );
 }
 
-export default SkillsMatched;
+export default Dashboard;

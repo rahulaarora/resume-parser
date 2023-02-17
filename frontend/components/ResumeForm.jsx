@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Router, { useRouter } from 'next/router'
-import Loader from "../components/Loader";
+import Loader from "./Loader";
 
 
 function resumeForm(props) {
@@ -64,7 +64,7 @@ function resumeForm(props) {
 
                         <label htmlFor="role">Enter the job role you are aspiring for* :</label>
                         <select required name="role" id="role" className="my-2" value={user.role === null ? " " : user.role} onChange={changeHandler}>
-                            <option value="" disabled selected>Select from the options!</option>
+                            <option disabled value="DEFAULT">Select from the options!</option>
                             <option value="mern developer">MERN Stack Developer</option>
                             <option value="java developer">JAVA Developer</option>
                         </select>

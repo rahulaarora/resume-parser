@@ -13,6 +13,7 @@
     "jquery": "^3.6.3",
     "mongodb": "^4.11.0",
     "next": "13.0.2",
+    "next-auth": "^4.19.2",
     "react": "18.2.0",
     "react-dev-utils": "^10.0.0",
     "react-dom": "18.2.0",
