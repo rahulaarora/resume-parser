@@ -1,17 +1,17 @@
-import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
-import Navbar from "../components/Navbar";
+import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
+import Navbar from '../components/Navbar'
 
-export default function Document() {
+export default function Document () {
   return (
     <Html>
       <Head>
         <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossOrigin="anonymous"
-        ></link>
+          href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
+          rel='stylesheet'
+          integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC'
+          crossOrigin='anonymous'
+        />
         {/* <Script
         id="bootstrap-cdn"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -24,5 +24,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }
