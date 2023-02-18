@@ -1,13 +1,19 @@
 import "../styles/globals.css";
+import "../styles/dashboard.css";
+import useScript from "../hooks/useScript";
 import Loader from "../components/Loader";
 import { useState } from "react";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  useScript(
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  );
+
   let userObj = {
-    userName: "",
-    email: "",
+    // userName: "",
+    // email: "",
     mobileNumber: "",
     education: "",
     skills: "",
@@ -18,9 +24,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     linkedIn: "",
     fileName: "form",
     role: "",
-    scores:{},
-    matchedSkills:[],
-    skillsRequired:[],
   };
 
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +39,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       </Head>
       <Component
         {...pageProps}
-        
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
+        data={data}
+        setData={setData}
       />
     </SessionProvider>
   );

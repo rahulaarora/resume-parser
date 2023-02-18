@@ -2,8 +2,8 @@ import clientPromise from "../../util/mongodb";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
-  const db = client.db("resumeParser");
-  const collection = db.collection("resumes");
+  const db = await client.db("resumeParser");
+  const collection = await db.collection("resumes");
 
   if (req.method === "POST") {
     let body = req.body;

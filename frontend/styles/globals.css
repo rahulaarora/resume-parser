@@ -10,8 +10,8 @@ html{
 .loader-component{
   z-index: 50;
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,9 +21,11 @@ html{
 }
 
 .form-container{
-  height: 70vh;
+  height: 40vh;
   overflow-y: scroll;
 }
 /* .loader-component > svg{
   position: relative; 
 } */
+
+
