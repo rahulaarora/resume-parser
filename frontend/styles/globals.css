@@ -21,7 +21,7 @@ html{
 }
 
 .form-container{
-  height: 40vh;
+  height: 70vh;
   overflow-y: scroll;
 }
 /* .loader-component > svg{
