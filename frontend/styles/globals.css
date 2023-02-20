@@ -3,11 +3,11 @@
   box-sizing: border-box;
 } */
 
-html{
+html {
   overflow: hidden;
 }
 
-.loader-component{
+.loader-component {
   z-index: 50;
   position: absolute;
   width: 100vw;
@@ -20,12 +20,10 @@ html{
   backdrop-filter: blur(2px);
 }
 
-.form-container{
+.form-container {
   height: 70vh;
   overflow-y: scroll;
 }
 /* .loader-component > svg{
   position: relative; 
 } */
-
-
