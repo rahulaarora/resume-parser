@@ -55,7 +55,7 @@ export async function getServerSideProps(context) {
       },
     };
   }
-
+  //user found
   return {
     props: {
       name: session.user.name,

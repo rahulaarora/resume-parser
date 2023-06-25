@@ -9,6 +9,8 @@ import { useSession } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../pages/api/auth/[...nextauth].js";
 
+import skillsData from "../data/skillsData";
+
 
 function resumeForm(props) {
     const { data: session, status } = useSession();
@@ -87,8 +89,9 @@ function resumeForm(props) {
                         <label htmlFor="role">Enter the job role you are aspiring for* :</label>
                         <select required name="role" id="role" className="my-2" value={user.role === null ? " " : user.role} onChange={changeHandler}>
                             <option disabled default value="">Select from the options--</option>
-                            <option value="mern developer">MERN Stack Developer</option>
-                            <option value="java developer">JAVA Developer</option>
+                            {Object.keys(skillsData).map((skill) => {
+                                return <option key={skill} value={skill}>{skill}</option>
+                            })}
                         </select>
 
                         <label htmlFor="userName">Full Name* :</label>
